@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <!-- <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ROnlSwQ5PCo4ZzIp2689n2Pr1BuKBIU&callback=initMap">
+  </script> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Veggie Works</title>
+  </head>
+  <body>
+  <div id="VeggieBanner">
+  		<div id="VeggieLogo"></div>
+  </div>
+  <div id="MainContent">
+  <p id="WelcomeText">To Find Local Vegetarian Options Enter Your Location Below.</p>
+  <input id="InputForm" placeholder="Enter Your Location Here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Location Here'"/>
+  <button id="SubmitButton" onclick="showDiv()">Search</button>
+  <img src= "{{ url_for('static', filename='Images/Spinner.gif') }}" id="Spinner"/>
+  </div>
+  </body>
+  <script>
+  	function activatePlacesSearch(){
+  		var input = document.getElementById('InputForm');
+  		var autocomplete = new google.maps.places.Autocomplete(input);
+  	}
+  </script>
+  <script>
+  	var map;
+   function initMap() {
+        var uluru = {lat: 39.9526, lng: 75.1652};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+  </script>
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ROnlSwQ5PCo4ZzIp2689n2Pr1BuKBIU&libraries=places&callback=activatePlacesSearch"></script>
+
+<!--<div id="map"></div>-->
+  <div id="Footer"></div>
+</html>

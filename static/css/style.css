@@ -1,0 +1,132 @@
+body, html{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+#VeggieBanner{
+	background-image: url("../Images/veggie-background.jpg");
+	background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    height:15%;
+    opacity:0.8;
+    border:1px solid black;
+}
+#MainContent{
+	background-image: url("../Images/main-content.jpg");
+	background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    height:1200px;
+    border:1px solid black;
+    color:#05c179;
+}
+#InputForm {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow:auto;
+    margin-top:3%;
+    border-radius:3px;
+    width:25%;
+    height:4%;
+    font-size:1.2em;
+    text-align:center;
+    border:5px solid #568fea;
+    color:white;
+    background-color:black;
+    opacity:0.8;
+}
+.pac-icon{
+	display:none;
+}
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+.pac-item{
+	height:50px;
+	margin-top:1em;
+	font-size:0.9em;
+}
+.pac-container{
+	opacity:0.8;
+	font-size:1.0em;
+	width:120%;
+}
+.pac-item-query{
+	font-size:1.1em;
+}
+.pac-container,.pac-matched,.pac-item{
+	background-color:gray;
+	color:black;
+	border:#bc4faf;
+}
+/*Change Placeholder text color of input form*/
+input::-webkit-input-placeholder {
+color: white !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: white !important;  
+}
+#SubmitButton{
+	margin:0 auto;
+	display:block;
+	height:5%;
+	width:10%;
+	margin-top:2%;
+	background-color:#07b73c;
+	border:1px solid #568fea;
+	opacity:0.9;
+	font-weight:700;
+}
+#Footer{
+    margin-top:-20px;
+    clear:both;
+    height:20px;
+    background-color:#A6CE39;
+    padding-top:6px;
+    padding-bottom:6px;
+    min-width:100%;
+    bottom:0;
+    position: absolute
+    bottom:0;
+    border:1px solid black;
+    opacity:0.9;
+}
+#WelcomeText{
+	margin:0 auto;
+	font-size:1.1em;
+	display:block;
+	margin-top:1em;
+	text-align:center;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 40.8px;
+}
+#Spinner{
+	margin: 0 auto;
+    display: none;
+    position: relative;
+}
+
+#map{
+	height:100%;
+	line-height:0;
+	margin:0px;
+	padding:0px;
+}

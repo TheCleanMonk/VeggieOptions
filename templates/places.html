@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+        var request = {
+            location:center,
+            radius: 8047,
+            types: ['cafe']
+        };
+        var service = new google.maps.places.PlacesService(map);
+
+        service.nearbySearch(request,callback);
+      }
+
+      function callback(results,status){
+        if(status == google.maps.places.placesServiceStatus.OK){
+            for(var i = 0;i < results.length;i++){
+                createMarker(results[i]);
+            }
+        }
+      }
+
+      function createMarker(place){
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map:map,
+            position: place.geometry.location
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ROnlSwQ5PCo4ZzIp2689n2Pr1BuKBIU&callback=initMap"
+    async defer></script>
+  </body>
+</html>
